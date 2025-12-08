@@ -11,3 +11,28 @@ A novel addition to the base Boltz model that allows for improved Glycoprotein, 
 - Modified cropping logic to adhere with a glycan-focused dataset
 - Refactored yaml parsing to allow for IUPAC --> structure prediction rather than relying on SMILES (Particularly for dealing with larger oligosaccharides)
 - Tuned hyperparams for optimal glycan taining
+
+
+## Benchmarks (To be updated):
+
+### Pre-Training (SMILES)
+NATIVE:   	dockqc_dataset_cleaned/7BLG.pdb
+PREDICTED:	7BLG_model_0.pdb
+----------
+Fnat_full:	 0.286
+Fnat_res :	 0.286
+lrms :    	 8.097
+rirms:    	 7.841
+----------
+DockQC:   	 0.181
+
+### Post-Training (IUPAC)
+NATIVE:   	dockqc_dataset_cleaned/7BLG.pdb
+PREDICTED:	7BLG_model_0_glycan.pdb
+----------
+Fnat_full:	 0.429
+Fnat_res :	 0.429
+lrms :    	 6.048
+rirms:    	 5.716
+----------
+DockQC:   	 0.281
